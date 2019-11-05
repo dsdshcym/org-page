@@ -200,7 +200,7 @@ default value is `op/get-file-category'."
   "The cache for general purpose.")
 
 (defconst op/rss-template "<?xml version=\"1.0\" encoding=\"utf-8\"?>
-<rss version=\"2.0\">
+<rss version=\"2.0\" xmlns:content=\"http://purl.org/rss/1.0/modules/content/\">
   <channel>
     <title>{{title}}</title>
     <link>{{link}}</link>
@@ -215,6 +215,7 @@ default value is `op/get-file-category'."
       <title>{{item-title}}</title>
       <link>{{item-link}}</link>
       <description><![CDATA[{{& item-description}}]]></description>
+      <content:encoded><![CDATA[{{& item-content}}]]></content:encoded>
       <pubDate>{{item-update-date}}</pubDate>
       <guid>{{item-link}}</guid>
     </item>
